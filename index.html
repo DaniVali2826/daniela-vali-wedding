@@ -216,10 +216,6 @@
       font-size: 1.8rem;
       font-weight: 600;
       margin: 0 0 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
     }
 
     .card p {
@@ -243,13 +239,9 @@
       width: 72px;
       height: 72px;
       object-fit: contain;
-      vertical-align: middle;
-      flex-shrink: 0;
+      display: block;
+      margin: 0 auto 15px;
       filter: drop-shadow(0 4px 7px rgba(62, 32, 15, 0.16));
-    }
-
-    .card h3 .location-icon {
-      transform: translateY(-2px);
     }
 
     .story-card {
@@ -301,6 +293,21 @@
       .location-icon {
         width: 62px;
         height: 62px;
+        margin: 0 auto 12px;
+      }
+      .card h3 {
+        font-size: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .location-icon {
+        width: 52px;
+        height: 52px;
+        margin: 0 auto 10px;
+      }
+      .card h3 {
+        font-size: 1.35rem;
       }
     }
   </style>
@@ -346,23 +353,19 @@
 
       <div class="card-grid">
         <div class="card">
-          <h3>
-            <img src="biserica.png" alt="TBD" class="location-icon" />
-            Cununia religioasă
-          </h3>
+          <img src="biserica.png" alt="TBD" class="location-icon" />
+          <h3>Cununia religioasă</h3>
           <p>TBD</p>
           <p>TBD</p>
           <span class="time">TBD</span>
         </div>
 
         <div class="card">
-          <h3>
-            <img src="restaurant.png" alt="Restaurant Panorama" class="location-icon" />
-            Petrecerea
-          </h3>
+          <img src="restaurant.png" alt="Restaurant Panorama" class="location-icon" />
+          <h3>Petrecerea</h3>
           <p>Hotel Panorama</p>
           <p>Calea Vâlcele, nr. 9, Sfântu Gheorghe</p>
-          <span class="time">TBD</span>
+          <span class="time">18:00</span>
         </div>
       </div>
     </div>
@@ -377,10 +380,8 @@
 
     <div class="card-grid">
       <div class="card">
-        <h3>
-          <img src="biserica.png" alt="TBD" class="location-icon" />
-          TBD
-        </h3>
+        <img src="biserica.png" alt="TBD" class="location-icon" />
+        <h3>TBD</h3>
         <p>TBD</p>
         <a
           class="button"
@@ -391,10 +392,8 @@
       </div>
 
       <div class="card">
-        <h3>
-          <img src="restaurant.png" alt="Restaurant Panorma" class="location-icon" />
-          Hotel Panorama
-        </h3>
+        <img src="restaurant.png" alt="Restaurant Panorma" class="location-icon" />
+        <h3>Hotel Panorama</h3>
         <p>Calea Vâlcele, nr. 9, Sfântu Gheorghe</p>
         <a
           class="button"
