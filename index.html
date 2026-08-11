@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Daniela & Vali | 24 Octombrie 2026</title>
+  <title>Dani & Vali | 24 Octombrie 2026</title>
 
   <!-- Preconnect și Preload resurse critice pentru performanță (previne flicker-ul la încărcare) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -134,7 +134,8 @@
     }
 
     .hero-content {
-      max-width: 900px;
+      width: 100%;
+      max-width: 945px;
       position: relative;
       z-index: 1;
       padding: 50px 30px;
@@ -326,10 +327,47 @@
     }
 
     .story-card {
-      max-width: 760px;
+      max-width: 945px;
+      width: 100%;
       margin: auto;
       font-size: 1.1rem;
       line-height: 1.9;
+    }
+
+    .parents-godparents {
+      margin-top: 30px;
+      padding-top: 25px;
+      border-top: 1px dashed rgba(192, 154, 83, 0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .people-group {
+      text-align: center;
+    }
+
+    .people-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--terracotta);
+      margin: 0 0 8px;
+      letter-spacing: 1px;
+    }
+
+    .people-names {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px 35px;
+      font-weight: 500;
+      color: var(--burgundy);
+    }
+
+    .people-names span {
+      display: inline-block;
     }
 
     .contact-info {
@@ -362,8 +400,10 @@
     }
 
     @media (max-width: 768px) {
-      .hero-content {
+      .hero-content,
+      .story-card {
         padding: 35px 20px;
+        max-width: 460px;
       }
       .card-grid {
         flex-direction: column;
@@ -486,12 +526,8 @@
   <section class="hero">
     <div class="hero-content">
       <p class="eyebrow">Ne căsătorim</p>
-      <h1>Daniela <br><span style="font-size: 0.6em; font-family: 'Great Vibes', cursive; color: var(--terracotta);">&</span><br> Vali</h1>
-      <p class="date">· 24 ·<br><span style="font-size: 0.6em; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 3px;">· Octombrie 2026 ·</span></p>
-      <p class="hero-text">
-        Ne-ar bucura mult să fiți alături de noi într-o zi de toamnă pe care vrem să o ținem minte: cu emoții, oameni dragi, zâmbete și mult dans.
-      </p>
-      <a class="button" href="#rsvp">Confirmă participarea</a>
+      <h1>Dani <br><span style="font-size: 0.6em; font-family: 'Great Vibes', cursive; color: var(--terracotta);">&</span><br> Vali</h1>
+      <p class="date"><span style="font-size: 0.6em; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 3px;">· 24 Octombrie 2026 ·</span></p>
     </div>
   </section>
 
@@ -501,16 +537,31 @@
 
     <div class="card story-card">
       <p>
-        Ziua nunții noastre nu ar fi la fel fără oamenii care ne-au fost aproape
-        și care fac parte, într-un fel sau altul, din viața noastră.
-        De aceea, ne dorim să vă avem lângă noi într-o zi plină de emoție,
-        zâmbete și bucurie.
+        Vom începe împreună cea mai frumoasă ascensiune, iar această zi specială nu ar fi la fel fără oamenii dragi 
+        din viața noastră. De aceea, ne dorim să vă avem lângă noi, într-un cadru plin de emoție, zâmbete și bucurie autentice.
       </p>
 
       <p>
-        Ne imaginăm o seară de toamnă caldă și frumoasă, cu mese pline,
-        pahare ridicate, povești, râsete și ringul de dans cât mai ocupat.
+        Ne imaginăm o seară magică de toamnă, cu distracție pe cinste, mult dans și voie bună.
       </p>
+
+      <div class="parents-godparents">
+        <div class="people-group">
+          <h4 class="people-title">Ne susțin părinții</h4>
+          <div class="people-names">
+            <span>Tatiana și Vasile Crețu</span>
+            <span>Ioana Niță și Ferdinando Cavalleri</span>
+          </div>
+        </div>
+
+        <div class="people-group">
+          <h4 class="people-title">Și nașii</h4>
+          <div class="people-names">
+            <span>Oana și Mircea Călin</span>
+            <span>Elena și Andrei Zamfir</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -520,12 +571,23 @@
       <div class="divider"></div>
 
       <div class="card-grid">
-        <div class="card hidden-card">
+        <div class="card">
           <img src="biserica.png?v=2" alt="TBD" class="location-icon" />
           <h3>Cununia religioasă</h3>
-          <p>TBD</p>
-          <p>TBD</p>
-          <span class="time">TBD</span>
+          <p>Biserica Sfinții Împărați Constantin și Elena</p>
+          <p>Strada Alexandru Odobescu 10, Brașov</p>
+          <div class="time-and-calendar">
+            <span class="time">15:00</span>
+            <div class="calendar-container">
+              <button class="calendar-btn" onclick="toggleCalendarDropdown(event, 'churchCalendarDropdown')">
+                Adaugă în Calendar
+              </button>
+              <div class="calendar-dropdown" id="churchCalendarDropdown">
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Dani+%26+Vali+-+Cununia+Religioas%C4%83&dates=20261024T150000/20261024T163000&ctz=Europe/Bucharest&details=V%C4%83+a%C8%99tept%C4%83m+cu+drag+la+cununia+noastr%C4%83+religioas%C4%83%21&location=Biserica+Sfin%C8%9Bii+%C3%8Emp%C4%83ra%C8%9Bi+Constantin+%C8%99i+Elena%2C+Strada+Alexandru+Odobescu+10%2C+Bra%C8%99ov" target="_blank">Google Calendar</a>
+                <a href="javascript:void(0)" onclick="downloadChurchICS()">Apple Calendar / iCal</a>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="card">
@@ -536,12 +598,12 @@
           <div class="time-and-calendar">
             <span class="time">18:00</span>
             <div class="calendar-container">
-              <button class="calendar-btn" onclick="toggleCalendarDropdown(event)">
+              <button class="calendar-btn" onclick="toggleCalendarDropdown(event, 'partyCalendarDropdown')">
                 Adaugă în Calendar
               </button>
-              <div class="calendar-dropdown" id="calendarDropdown">
-                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Daniela+%26+Vali+-+Nunt%C4%83&dates=20261024T180000/20261025T050000&ctz=Europe/Bucharest&details=V%C4%83+a%C8%99tept%C4%83m+cu+drag+la+nunta+noastr%C4%83%21&location=Hotel+Panorama%2C+Calea+V%C3%A2lcele%2C+nr.+9%2C+Sf%C3%A2ntu+Gheorghe" target="_blank">Google Calendar</a>
-                <a href="javascript:void(0)" onclick="downloadICS()">Apple Calendar / iCal</a>
+              <div class="calendar-dropdown" id="partyCalendarDropdown">
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Dani+%26+Vali+-+Nunt%C4%83&dates=20261024T180000/20261025T050000&ctz=Europe/Bucharest&details=V%C4%83+a%C8%99tept%C4%83m+cu+drag+la+nunta+noastr%C4%83%21&location=Hotel+Panorama%2C+Calea+V%C3%A2lcele%2C+nr.+9%2C+Sf%C3%A2ntu+Gheorghe" target="_blank">Google Calendar</a>
+                <a href="javascript:void(0)" onclick="downloadPartyICS()">Apple Calendar / iCal</a>
               </div>
             </div>
           </div>
@@ -558,13 +620,13 @@
     <div class="divider"></div>
 
     <div class="card-grid">
-      <div class="card hidden-card">
+      <div class="card">
         <img src="biserica.png?v=2" alt="TBD" class="location-icon" />
-        <h3>TBD</h3>
-        <p>TBD</p>
+        <h3>Biserica Sfinții Împărați Constantin și Elena</h3>
+        <p>Strada Alexandru Odobescu 10, Brașov</p>
         <a
           class="button"
-          href="https://http.cat/status/404"
+          href="https://maps.app.goo.gl/reWxdQU8xHck8KG79"
           target="_blank">
           Deschide în Google Maps
         </a>
@@ -600,7 +662,7 @@
 
         <a
           class="button"
-          href="https://http.cat/status/404"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSd534TVpHoHIdJJw0KZTUbJHmoZFg4-XviWA69YdSl-SdYLCg/viewform"
           target="_blank">
           Completează formularul
         </a>
@@ -646,47 +708,70 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    function toggleCalendarDropdown(event) {
+    function toggleCalendarDropdown(event, dropdownId) {
       event.stopPropagation();
-      const dropdown = document.getElementById("calendarDropdown");
-      dropdown.classList.toggle("show");
+      const targetId = dropdownId || "partyCalendarDropdown";
+      const targetDropdown = document.getElementById(targetId);
+
+      document.querySelectorAll(".calendar-dropdown").forEach(d => {
+        if (d !== targetDropdown) {
+          d.classList.remove("show");
+        }
+      });
+
+      if (targetDropdown) {
+        targetDropdown.classList.toggle("show");
+      }
     }
 
     window.addEventListener("click", function() {
-      const dropdown = document.getElementById("calendarDropdown");
-      if (dropdown && dropdown.classList.contains("show")) {
-        dropdown.classList.remove("show");
-      }
+      document.querySelectorAll(".calendar-dropdown").forEach(d => {
+        d.classList.remove("show");
+      });
     });
 
-    function downloadICS() {
-      const title = "Daniela & Vali - Nunta";
-      const description = "Va asteptam cu drag la nunta noastra!";
-      const location = "Hotel Panorama, Calea Valcele, nr. 9, Sfantu Gheorghe";
-      // UTC time for Oct 24, 2026 18:00 (EEST is UTC+3, so 15:00 UTC)
-      const start = "20261024T150000Z";
-      // UTC time for Oct 25, 2026 05:00 (EEST is UTC+3, so 02:00 UTC)
-      const end = "20261025T020000Z";
-
+    function downloadICSFile(opts) {
       const icsContent = "BEGIN:VCALENDAR\n" +
                          "VERSION:2.0\n" +
-                         "PRODID:-//Daniela Vali Wedding//NONSGML v1.0//EN\n" +
+                         "PRODID:-//Dani Vali Wedding//NONSGML v1.0//EN\n" +
                          "BEGIN:VEVENT\n" +
-                         "SUMMARY:" + title + "\n" +
-                         "DESCRIPTION:" + description + "\n" +
-                         "LOCATION:" + location + "\n" +
-                         "DTSTART:" + start + "\n" +
-                         "DTEND:" + end + "\n" +
+                         "SUMMARY:" + opts.title + "\n" +
+                         "DESCRIPTION:" + opts.description + "\n" +
+                         "LOCATION:" + opts.location + "\n" +
+                         "DTSTART:" + opts.start + "\n" +
+                         "DTEND:" + opts.end + "\n" +
                          "END:VEVENT\n" +
                          "END:VCALENDAR";
 
       const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8;" });
       const link = document.createElement("a");
       link.href = URL.createObjectURL(blob);
-      link.setAttribute("download", "Daniela_Vali_Nunta.ics");
+      link.setAttribute("download", opts.filename);
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+    }
+
+    function downloadChurchICS() {
+      downloadICSFile({
+        title: "Dani & Vali - Cununia Religioasă",
+        description: "Vă așteptăm cu drag la cununia noastră religioasă!",
+        location: "Biserica Sfinții Împărați Constantin și Elena, Strada Alexandru Odobescu 10, Brașov",
+        start: "20261024T120000Z",
+        end: "20261024T133000Z",
+        filename: "Daniela_Vali_Cununia_Religioasa.ics"
+      });
+    }
+
+    function downloadPartyICS() {
+      downloadICSFile({
+        title: "Dani & Vali - Petrecerea",
+        description: "Vă așteptăm cu drag la nunta noastră!",
+        location: "Hotel Panorama, Calea Vâlcele, nr. 9, Sfântu Gheorghe",
+        start: "20261024T150000Z",
+        end: "20261025T020000Z",
+        filename: "Daniela_Vali_Nunta.ics"
+      });
     }
 
     // Hide loader wrapper after everything (fonts, background image, DOM) is fully loaded
