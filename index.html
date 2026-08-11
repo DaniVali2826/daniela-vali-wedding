@@ -6,6 +6,13 @@
 
   <title>Dani & Vali | 24 Octombrie 2026</title>
 
+  <meta name="description" content="Dani & Vali vă invită la nunta lor pe 24 Octombrie 2026." />
+  <meta property="og:title" content="Dani & Vali | 24 Octombrie 2026" />
+  <meta property="og:description" content="Vom începe împreună cea mai frumoasă ascensiune. Vă așteptăm cu drag la nunta noastră!" />
+  <meta property="og:image" content="Munte_processed.png" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#F8F4EC" />
+
   <!-- Preconnect și Preload resurse critice pentru performanță (previne flicker-ul la încărcare) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -384,6 +391,12 @@
       line-height: 1.5;
     }
 
+    .btn-arrow {
+      font-size: 1em;
+      margin-left: 5px;
+      display: inline-block;
+    }
+
     footer {
       text-align: center;
       padding: 60px 20px;
@@ -430,6 +443,10 @@
       }
       .card h3 {
         font-size: 1.35rem;
+      }
+      .date span {
+        font-size: 0.52em !important;
+        letter-spacing: 1.5px !important;
       }
     }
 
@@ -572,7 +589,7 @@
 
       <div class="card-grid">
         <div class="card">
-          <img src="biserica.png?v=2" alt="TBD" class="location-icon" />
+          <img src="biserica.png?v=2" alt="Biserica Sfinții Împărați Constantin și Elena" class="location-icon" loading="lazy" />
           <h3>Cununia religioasă</h3>
           <p>Biserica Sfinții Împărați Constantin și Elena</p>
           <p>Strada Alexandru Odobescu 10, Brașov</p>
@@ -580,7 +597,7 @@
             <span class="time">15:00</span>
             <div class="calendar-container">
               <button class="calendar-btn" onclick="toggleCalendarDropdown(event, 'churchCalendarDropdown')">
-                Adaugă în Calendar
+                Adaugă în Calendar <span class="btn-arrow">▾</span>
               </button>
               <div class="calendar-dropdown" id="churchCalendarDropdown">
                 <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Dani+%26+Vali+-+Cununia+Religioas%C4%83&dates=20261024T150000/20261024T163000&ctz=Europe/Bucharest&details=V%C4%83+a%C8%99tept%C4%83m+cu+drag+la+cununia+noastr%C4%83+religioas%C4%83%21&location=Biserica+Sfin%C8%9Bii+%C3%8Emp%C4%83ra%C8%9Bi+Constantin+%C8%99i+Elena%2C+Strada+Alexandru+Odobescu+10%2C+Bra%C8%99ov" target="_blank">Google Calendar</a>
@@ -591,7 +608,7 @@
         </div>
 
         <div class="card">
-          <img src="restaurant.png?v=2" alt="Restaurant Panorama" class="location-icon" />
+          <img src="restaurant.png?v=2" alt="Hotel Panorama" class="location-icon" loading="lazy" />
           <h3>Petrecerea</h3>
           <p>Hotel Panorama</p>
           <p>Calea Vâlcele, nr. 9, Sfântu Gheorghe</p>
@@ -599,7 +616,7 @@
             <span class="time">18:00</span>
             <div class="calendar-container">
               <button class="calendar-btn" onclick="toggleCalendarDropdown(event, 'partyCalendarDropdown')">
-                Adaugă în Calendar
+                Adaugă în Calendar <span class="btn-arrow">▾</span>
               </button>
               <div class="calendar-dropdown" id="partyCalendarDropdown">
                 <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Dani+%26+Vali+-+Nunt%C4%83&dates=20261024T180000/20261025T050000&ctz=Europe/Bucharest&details=V%C4%83+a%C8%99tept%C4%83m+cu+drag+la+nunta+noastr%C4%83%21&location=Hotel+Panorama%2C+Calea+V%C3%A2lcele%2C+nr.+9%2C+Sf%C3%A2ntu+Gheorghe" target="_blank">Google Calendar</a>
@@ -690,9 +707,11 @@
       const now = new Date();
       const diff = targetDate - now;
 
+      const countdownEl = document.getElementById("countdown");
+      if (!countdownEl) return;
+
       if (diff <= 0) {
-        document.getElementById("countdown").innerHTML =
-          "Astăzi este ziua cea mare! ❤️";
+        countdownEl.innerHTML = "Astăzi este ziua cea mare! ❤️";
         return;
       }
 
@@ -701,7 +720,7 @@
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
 
-      document.getElementById("countdown").innerHTML =
+      countdownEl.innerHTML =
         `${days} zile · ${hours} ore · ${minutes} minute · ${seconds} secunde`;
     }
 
